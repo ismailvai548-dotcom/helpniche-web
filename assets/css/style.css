@@ -410,81 +410,130 @@ p, span.body-text, li, .font-kalpurush {
     max-width: 250px;
   }
 }
-/* Official Telegram Floating Community Widget */
-.floating-telegram-widget {
+/* ============================================================
+   Official Floating Community Social Dock (Telegram, YouTube, Facebook)
+   ============================================================ */
+.floating-social-dock {
   position: fixed;
   bottom: 22px;
   right: 22px;
   z-index: 95;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 14px 6px 6px;
+  gap: 6px;
+  padding: 5px 6px;
   border-radius: 9999px;
   background: rgba(10, 15, 23, 0.92);
-  border: 1.5px solid rgba(42, 171, 238, 0.4);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8),
-              0 0 25px rgba(34, 158, 217, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.8),
+              0 0 25px rgba(0, 230, 118, 0.15);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-social-dock:hover {
+  border-color: rgba(0, 230, 118, 0.4);
+  box-shadow: 0 14px 45px -5px rgba(0, 0, 0, 0.9),
+              0 0 35px rgba(0, 230, 118, 0.25);
+}
+
+.social-dock-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px 4px 4px;
+  border-radius: 9999px;
   text-decoration: none;
+  transition: all 0.25s ease;
+  background: rgba(255, 255, 255, 0.04);
 }
 
-.floating-telegram-widget:hover {
-  transform: translateY(-3px) scale(1.02);
-  border-color: rgba(42, 171, 238, 0.8);
-  box-shadow: 0 16px 40px -5px rgba(0, 0, 0, 0.9),
-              0 0 35px rgba(34, 158, 217, 0.45);
+.social-dock-btn:hover {
+  transform: translateY(-2px);
 }
 
-.telegram-icon-circle {
+.social-dock-icon {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 15px rgba(34, 158, 217, 0.4);
+  transition: all 0.25s ease;
 }
 
-.telegram-live-dot {
+/* Telegram Button */
+.social-dock-btn.tg-btn:hover {
+  background: rgba(42, 171, 238, 0.18);
+}
+.tg-btn .social-dock-icon {
+  background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+  box-shadow: 0 3px 12px rgba(34, 158, 217, 0.4);
+}
+
+/* YouTube Button */
+.social-dock-btn.yt-btn:hover {
+  background: rgba(255, 0, 0, 0.18);
+}
+.yt-btn .social-dock-icon {
+  background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+  box-shadow: 0 3px 12px rgba(255, 0, 0, 0.4);
+}
+
+/* Facebook Button */
+.social-dock-btn.fb-btn:hover {
+  background: rgba(24, 119, 242, 0.18);
+}
+.fb-btn .social-dock-icon {
+  background: linear-gradient(135deg, #1877F2 0%, #0D65D9 100%);
+  box-shadow: 0 3px 12px rgba(24, 119, 242, 0.4);
+}
+
+.social-dock-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+}
+
+.dock-live-dot {
   position: absolute;
   top: 1px;
   right: 1px;
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: #00E676;
-  border: 2px solid #0A0F17;
+  border: 1.5px solid #0A0F17;
   animation: liveDotPulse 2s infinite ease-in-out;
 }
 
 @keyframes liveDotPulse {
   0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.8; }
+  50% { transform: scale(1.25); opacity: 0.85; }
 }
 
-@media (max-width: 480px) {
-  .floating-telegram-widget {
-    bottom: 18px;
-    right: 16px;
+@media (max-width: 640px) {
+  .floating-social-dock {
+    bottom: 16px;
+    right: 14px;
+    gap: 4px;
+    padding: 4px;
+  }
+  .social-dock-btn {
     padding: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    background: transparent !important;
   }
-  .floating-telegram-widget .telegram-text-wrap {
-    display: none;
+  .social-dock-label {
+    display: none !important;
   }
-  .telegram-icon-circle {
-    width: 48px;
-    height: 48px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 25px rgba(34, 158, 217, 0.55), 0 0 20px rgba(34, 158, 217, 0.35);
+  .social-dock-icon {
+    width: 38px;
+    height: 38px;
   }
 }
 
