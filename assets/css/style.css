@@ -105,28 +105,28 @@ body {
   transform: translateY(-2px);
 }
 
-/* Smart CTA Download Button */
+/* Smart CTA Download Button (Refined Sleek Pill) */
 .btn-hero-download {
-  background: linear-gradient(135deg, #00E676 0%, #00C853 45%, #00D2FF 100%);
+  background: linear-gradient(135deg, #00E676 0%, #00DF89 50%, #00D2FF 100%);
   color: #05080C;
   font-weight: 800;
-  box-shadow: 0 10px 30px -5px rgba(0, 230, 118, 0.5), 0 0 20px rgba(0, 210, 255, 0.3);
+  box-shadow: 0 4px 20px -2px rgba(0, 230, 118, 0.4), 0 0 12px rgba(0, 210, 255, 0.2);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
 
 .btn-hero-download:hover {
-  transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 14px 40px -4px rgba(0, 230, 118, 0.7), 0 0 30px rgba(0, 210, 255, 0.5);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 28px -2px rgba(0, 230, 118, 0.6), 0 0 22px rgba(0, 210, 255, 0.35);
 }
 
 @keyframes heroPulse {
   0%, 100% {
-    box-shadow: 0 8px 25px -4px rgba(0, 230, 118, 0.35), 0 0 15px rgba(0, 210, 255, 0.2);
+    box-shadow: 0 4px 18px -2px rgba(0, 230, 118, 0.35), 0 0 10px rgba(0, 210, 255, 0.15);
   }
   50% {
-    box-shadow: 0 14px 40px -2px rgba(0, 230, 118, 0.75), 0 0 30px rgba(0, 210, 255, 0.5);
+    box-shadow: 0 8px 25px -2px rgba(0, 230, 118, 0.55), 0 0 18px rgba(0, 210, 255, 0.25);
   }
 }
 
