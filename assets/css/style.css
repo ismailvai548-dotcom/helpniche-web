@@ -105,10 +105,12 @@ p, span.body-text, li, .font-kalpurush {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Typography Fluidity */
+/* Typography Fluidity (Strict 2-Line Hero on Mobile & Desktop) */
 .hero-fluid-title {
-  font-size: clamp(1.9rem, 5.5vw, 3.8rem);
-  line-height: 1.22;
+  font-size: clamp(1.32rem, 5.2vw, 3.6rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 .hero-fluid-sub {
