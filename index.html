@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helpniche — ক্রস-প্ল্যাটফর্ম ডিজিটাল আত্মনিয়ন্ত্রণ ও মানসিক সচেতনতা প্ল্যাটফর্ম</title>
+  <meta name="description" content="Helpniche - অ্যান্ড্রয়েড ও উইন্ডোজ উভয়ের জন্য তৈরি আধুনিক ডিজিটাল আত্মনিয়ন্ত্রণ প্ল্যাটফর্ম। সোশ্যাল মিডিয়া কন্ট্রোল, অ্যাড ব্লকার, Iron Will স্ট্রিক ও আমল রিমাইন্ডার।">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#06090D',
+              card: '#0D131C',
+              green: '#00E676',
+              cyan: '#00D2FF',
+              amber: '#FFB703',
+              purple: '#8B5CF6'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#06090D] text-slate-100 antialiased selection:bg-emerald-500 selection:text-black relative">
+
+  <!-- Ambient Ambient Radial Background Glows -->
+  <div class="ambient-glow-hero"></div>
+
+  <!-- 1. Header / Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo & Identity -->
+        <a href="#" class="flex items-center gap-3.5 group">
+          <div class="relative w-11 h-11 rounded-2xl overflow-hidden border border-emerald-500/40 shadow-[0_0_20px_rgba(0,230,118,0.3)] group-hover:border-emerald-400 transition-all duration-300">
+            <img src="assets/images/logo.jpg" alt="Helpniche Logo" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-2xl font-black tracking-tight text-white font-['Outfit'] block leading-none">
+                Helpniche
+              </span>
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-mono">
+                v1.0 PRO
+              </span>
+            </div>
+            <span class="text-[11px] text-slate-400 font-medium">অফিসিয়াল সফটওয়্যার প্ল্যাটফর্ম</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="#features" class="hover:text-emerald-400 transition-colors">মূল ফিচারসমূহ</a>
+          <a href="#cross-platform" class="hover:text-emerald-400 transition-colors">প্ল্যাটফর্ম ও স্পেসিফিকেশন</a>
+          <a href="#showcase" class="hover:text-emerald-400 transition-colors">ইন্টারফেস প্রিভিউ</a>
+          <a href="#installation" class="hover:text-emerald-400 transition-colors">ইনস্টলেশন গাইড</a>
+          <a href="#faq" class="hover:text-emerald-400 transition-colors">সাধারণ জিজ্ঞাসা</a>
+        </nav>
+
+        <!-- Header Actions: Quick Downloads -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="#downloads-hub" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-700/80 hover:border-emerald-500/50 text-slate-200 text-xs font-semibold transition-all duration-200">
+            <i data-lucide="monitor" class="w-4 h-4 text-cyan-400"></i>
+            <span>উইন্ডোজ পিসি</span>
+          </a>
+          <a href="#downloads-hub" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all duration-200 shadow-[0_0_20px_rgba(0,230,118,0.3)]">
+            <i data-lucide="smartphone" class="w-4 h-4"></i>
+            <span>অ্যান্ড্রয়েড APK</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <div class="flex lg:hidden">
+          <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-white p-2 rounded-lg bg-slate-800/60 border border-slate-700/60" aria-label="Toggle Menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#0A0F15] border-b border-slate-800/80 px-6 py-5 space-y-4">
+      <a href="#features" class="block text-slate-200 hover:text-emerald-400 font-medium py-1">মূল ফিচারসমূহ</a>
+      <a href="#cross-platform" class="block text-slate-200 hover:text-emerald-400 font-medium py-1">প্ল্যাটফর্ম ও স্পেসিফিকেশন</a>
+      <a href="#showcase" class="block text-slate-200 hover:text-emerald-400 font-medium py-1">ইন্টারফেস প্রিভিউ</a>
+      <a href="#installation" class="block text-slate-200 hover:text-emerald-400 font-medium py-1">ইনস্টলেশন গাইড</a>
+      <a href="#faq" class="block text-slate-200 hover:text-emerald-400 font-medium py-1">সাধারণ জিজ্ঞাসা</a>
+      <div class="pt-3 grid grid-cols-2 gap-3">
+        <a href="downloads/helpniche-setup-v1.0.exe" download="Helpniche-Setup-v1.0.exe" data-os="windows" class="btn-download-action flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white font-bold text-xs">
+          <i data-lucide="monitor" class="w-4 h-4 text-cyan-400"></i>
+          <span>Windows</span>
+        </a>
+        <a href="downloads/helpniche-v1.0.apk" download="Helpniche-v1.0.apk" data-os="android" class="btn-download-action flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">
+          <i data-lucide="smartphone" class="w-4 h-4"></i>
+          <span>Android</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Top Cross-Platform Pill -->
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-900/90 border border-slate-700/80 shadow-inner backdrop-blur-md">
+          <span class="flex items-center gap-1.5 text-xs font-semibold text-emerald-400">
+            <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+            অ্যান্ড্রয়েড ফোন
+          </span>
+          <span class="w-1 h-1 rounded-full bg-slate-600"></span>
+          <span class="flex items-center gap-1.5 text-xs font-semibold text-cyan-400">
+            <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
+            উইন্ডোজ পিসি
+          </span>
+          <span class="w-1 h-1 rounded-full bg-slate-600"></span>
+          <span class="text-[11px] text-slate-400">ক্রস-ডিভাইস সিঙ্ক ও সুরক্ষা</span>
+        </div>
+      </div>
+
+      <!-- Main Heading -->
+      <div class="max-w-4xl mx-auto text-center space-y-6">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.2] text-white">
+          ডিজিটাল আসক্তি ও বিভ্রান্তিমুক্ত <br>
+          <span class="gradient-text">এক পরিচ্ছন্ন ও সুশৃঙ্খল জীবনধারা</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-light">
+          স্মার্টফোন কিংবা কম্পিউটার—উভয় ডিভাইসেই কাজের গভীর মনোযোগ নিশ্চিত করুন। উন্নত নেটওয়ার্ক ফায়ারওয়াল, বিজ্ঞাপন মুক্তি, <strong>Iron Will</strong> স্ট্রিক এবং দৈনিক আমলের এক আধুনিক মেলবন্ধন।
+        </p>
+      </div>
+
+      <!-- Dynamic Platform Selector & Download Hub -->
+      <div id="downloads-hub" class="mt-10 max-w-xl mx-auto bg-slate-900/80 border border-slate-800 p-3 rounded-3xl backdrop-blur-xl shadow-2xl">
+        
+        <!-- Platform Switch Tabs -->
+        <div class="grid grid-cols-2 gap-2 p-1 bg-[#06090D] rounded-2xl border border-slate-800">
+          <button id="btn-platform-windows" type="button" class="platform-pill flex items-center justify-center gap-2.5 py-3 rounded-xl font-bold text-sm">
+            <i data-lucide="monitor" class="w-4 h-4"></i>
+            <span>Windows পিসি</span>
+          </button>
+          <button id="btn-platform-android" type="button" class="platform-pill flex items-center justify-center gap-2.5 py-3 rounded-xl font-bold text-sm">
+            <i data-lucide="smartphone" class="w-4 h-4"></i>
+            <span>Android মোবাইল</span>
+          </button>
+        </div>
+
+        <!-- Windows Download Card -->
+        <div id="download-panel-windows" class="p-5 text-center space-y-4">
+          <div class="flex items-center justify-between text-xs text-slate-400 px-2">
+            <span>সাপোর্ট: Windows 10 & 11 (64-bit)</span>
+            <span class="font-mono text-cyan-400 font-bold">সংস্করণ v1.0 • 24.0 MB</span>
+          </div>
+
+          <a href="downloads/helpniche-setup-v1.0.exe" download="Helpniche-Setup-v1.0.exe" data-os="windows" class="btn-download-action btn-pulse-glow w-full flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-teal-400 to-emerald-400 text-slate-950 font-black text-lg transition-all duration-300 transform hover:scale-[1.02]">
+            <i data-lucide="download" class="w-6 h-6 stroke-[2.5]"></i>
+            <span>উইন্ডোজের জন্য ডাউনলোড করুন (.exe)</span>
+          </a>
+
+          <div class="flex items-center justify-center gap-6 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> এক-ক্লিকে ইনস্টলার</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> ব্যাকগ্রাউন্ড মোড</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> শূন্য ল্যাগ</span>
+          </div>
+        </div>
+
+        <!-- Android Download Card -->
+        <div id="download-panel-android" class="hidden p-5 text-center space-y-4">
+          <div class="flex items-center justify-between text-xs text-slate-400 px-2">
+            <span>সাপোর্ট: Android 6.0 থেকে সর্বশেষ ভার্সন</span>
+            <span class="font-mono text-emerald-400 font-bold">সংস্করণ v1.0 • মাত্র ৬.৫ MB</span>
+          </div>
+
+          <a href="downloads/helpniche-v1.0.apk" download="Helpniche-v1.0.apk" data-os="android" class="btn-download-action btn-pulse-glow w-full flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 text-slate-950 font-black text-lg transition-all duration-300 transform hover:scale-[1.02]">
+            <i data-lucide="download" class="w-6 h-6 stroke-[2.5]"></i>
+            <span>অ্যান্ড্রয়েড APK ডাউনলোড করুন</span>
+          </a>
+
+          <div class="flex items-center justify-center gap-6 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> কোনো রুট প্রয়োজন নেই</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> ব্যাটারি অপ্টিমাইজড</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> সুপার ফাস্ট</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Trust Bar -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-8 text-xs text-slate-400">
+        <span class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+          ১০০% সিকিউর ও ডিজিটাল সাইন্ড
+        </span>
+        <span class="flex items-center gap-2">
+          <i data-lucide="eye-off" class="w-4 h-4 text-cyan-400"></i>
+          জিরো পার্সোনাল ডেটা ট্র্যাকিং
+        </span>
+        <span class="flex items-center gap-2">
+          <i data-lucide="activity" class="w-4 h-4 text-amber-400"></i>
+          সফল ব্যবহারকারী: <strong class="text-white font-['Outfit']" id="live-download-counter">২,৪৮০+</strong>
+        </span>
+      </div>
+
+      <!-- Hero Visual Dual Presentation (Desktop Window + Mobile Mockup) -->
+      <div class="mt-16 max-w-5xl mx-auto relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Desktop Mockup Frame (7 cols) -->
+          <div class="lg:col-span-8 desktop-window-frame">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="window-dot bg-rose-500/80"></span>
+                <span class="window-dot bg-amber-500/80"></span>
+                <span class="window-dot bg-emerald-500/80"></span>
+              </div>
+              <div class="text-xs text-slate-400 font-mono flex items-center gap-2">
+                <i data-lucide="shield" class="w-3.5 h-3.5 text-emerald-400"></i>
+                Helpniche Control Center • Windows Edition
+              </div>
+              <div class="text-xs text-emerald-400 font-mono font-bold flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                ACTIVE
+              </div>
+            </div>
+
+            <!-- Inside desktop window preview -->
+            <div class="p-6 sm:p-8 bg-gradient-to-b from-[#0D131C] to-[#080C11] space-y-6">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <div class="text-xs text-slate-400">আজকের ফোকাস সেশন</div>
+                  <div class="text-2xl font-bold text-white font-['Outfit'] mt-1">৫ ঘণ্টা ৪৫ মি.</div>
+                  <div class="text-[11px] text-emerald-400 mt-0.5">↑ ২৪% উৎপাদনশীলতা বৃদ্ধি</div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <div class="text-xs text-slate-400">অ্যাড ও ট্র্যাকার ব্লক</div>
+                  <div class="text-2xl font-bold text-cyan-400 font-['Outfit'] mt-1">১,৮২০ টি</div>
+                  <div class="text-[11px] text-slate-400 mt-0.5">ব্যান্ডউইথ সাশ্রয়: ~140 MB</div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <div class="text-xs text-slate-400">Iron Will স্ট্রিক</div>
+                  <div class="text-2xl font-bold text-amber-400 font-['Outfit'] mt-1">৭ দিন ক্লিন</div>
+                  <div class="text-[11px] text-slate-300 mt-0.5">পদবী: অদম্য সাধক</div>
+                </div>
+              </div>
+
+              <!-- Visual graph/bar mockup in desktop -->
+              <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="space-y-1">
+                  <div class="text-sm font-bold text-white flex items-center gap-2">
+                    <i data-lucide="wifi" class="w-4 h-4 text-emerald-400"></i>
+                    সিস্টেম-ওয়াইড ডিজিটাল ফায়ারওয়াল
+                  </div>
+                  <p class="text-xs text-slate-400">অনাকাঙ্ক্ষিত নোটিফিকেশন ও কাজের বাইরের ব্রাউজিং স্বয়ংক্রিয়ভাবে স্থগিত রয়েছে।</p>
+                </div>
+                <span class="px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-bold whitespace-nowrap">
+                  সুরক্ষিত ও লকড
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Phone Mockup Frame (4 cols) overlapping -->
+          <div class="lg:col-span-4 flex justify-center">
+            <div class="phone-mockup-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen aspect-[9/19.5]">
+                <img src="assets/images/screen-home.png" alt="Helpniche Mobile Experience" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. Modern Bento Grid Features -->
+  <section id="features" class="py-24 bg-[#0A0E14] border-y border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20 font-mono">
+          ARCHITECTURE & MODULES
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white">
+          উন্নত প্রযুক্তি ও নিখুঁত ফিচারের সমন্বয়
+        </h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          প্রতিটি মডিউল বিশেষভাবে ডিজাইন করা হয়েছে যেন আপনার সময়, মনস্তত্ত্ব ও আত্মিক প্রশান্তি সর্বদা সুরক্ষিত থাকে।
+        </p>
+      </div>
+
+      <!-- Bento Grid (Linear / Apple style) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Bento 1: Large Span (2 Columns) -->
+        <div class="bento-card md:col-span-2 p-8 sm:p-10 flex flex-col justify-between">
+          <div class="space-y-4 max-w-xl">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <i data-lucide="shield-alert" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">বুদ্ধিমান ডিজিটাল ফায়ারওয়াল ও সোশ্যাল কন্ট্রোল</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              অযথা সোশ্যাল মিডিয়া স্ক্রলিং এবং ক্ষতিকর সাইটের প্রলোভন বন্ধ করতে কাজ করে এই ফায়ারওয়াল। স্মার্ট রুলসের মাধ্যমে আপনি কাজের সময়ে নির্দিষ্ট ডোমেন বা অ্যাপ পুরোপুরি লক করে রাখতে পারেন।
+            </p>
+          </div>
+          <div class="mt-8 pt-6 border-t border-slate-800/80 flex flex-wrap gap-4 text-xs font-medium text-slate-300">
+            <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-emerald-400">✓ কাস্টম ব্লকলিস্ট</span>
+            <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400">✓ সিডিউল ফোকাস মোড</span>
+            <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-amber-400">✓ শূন্য ট্র্যাকিং</span>
+          </div>
+        </div>
+
+        <!-- Bento 2: Iron Will (1 Column) -->
+        <div class="bento-card p-8 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+              <i data-lucide="flame" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">Iron Will — অদম্য ইচ্ছাশক্তি</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              ডিজিটাল আসক্তি কাটিয়ে নতুন অভ্যাস গড়তে লাইভ স্ট্রিক ট্র্যাকার। দিন বৃদ্ধির সাথে সাথে 'সংগ্রামী পথিক' থেকে উচ্চতর পদে উত্তীর্ণ হয়ে নিজের জয় উদযাপন করুন।
+            </p>
+          </div>
+          <div class="mt-6 p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+            <div class="text-xs text-slate-400">লাইভ কাউন্টডাউন</div>
+            <div class="text-xl font-bold text-amber-400 font-mono mt-0.5">1 Days 12:13:25</div>
+          </div>
+        </div>
+
+        <!-- Bento 3: Ad Blocker (1 Column) -->
+        <div class="bento-card p-8 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+              <i data-lucide="ban" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">সিস্টেম অ্যাড কন্ট্রোলার</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              বিরক্তিকর পপ-আপ, বিভ্রান্তিকর ব্যানার ও ক্ষতিকর স্ক্রিপ্ট স্বয়ংক্রিয়ভাবে ফিল্টার করে সুরক্ষিত ও দ্রুত ব্রাউজিং নিশ্চিত করে।
+            </p>
+          </div>
+          <div class="mt-6 flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-xs text-slate-300">বিজ্ঞাপন ফিল্টার</span>
+            <span class="text-xs text-emerald-400 font-bold">সক্রিয় (অন)</span>
+          </div>
+        </div>
+
+        <!-- Bento 4: Spiritual Balance (1 Column) -->
+        <div class="bento-card p-8 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
+              <i data-lucide="bell" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">ওয়াক্ত অ্যালার্ম ও তসবিহ</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              সঠিক নামাজের ওয়াক্তের সময়সূচি, স্মার্ট ভাইব্রেশন এবং নিয়মিত আত্মশুদ্ধির জন্য ডিজিটাল তসবিহ কাউন্টার।
+            </p>
+          </div>
+          <div class="mt-6 p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-3">
+            <i data-lucide="clock" class="w-4 h-4 text-blue-400"></i>
+            <span class="text-xs text-slate-300">নামাজের ওয়াক্ত রিমাইন্ডার</span>
+          </div>
+        </div>
+
+        <!-- Bento 5: Unlock Guard (1 Column) -->
+        <div class="bento-card p-8 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
+              <i data-lucide="unlock" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">স্মার্ট আনলক গার্ড</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              স্ক্রিন আনলক করার মুহূর্তে দরূদ অটো-প্লে এবং সচেতনতামূলক বার্তা, যা অযথা ফোন চেক করার অবচেতন অভ্যাস দূর করতে সাহায্য করে।
+            </p>
+          </div>
+          <div class="mt-6 p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+            <span class="text-xs text-slate-300">সুরক্ষা স্ট্যাটাস</span>
+            <span class="text-xs text-purple-400 font-bold">গার্ড একটিভ</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. Cross-Platform Specifications (Android + Windows) -->
+  <section id="cross-platform" class="py-24 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1.5 rounded-full border border-cyan-500/20 font-mono">
+          SYSTEM COMPATIBILITY
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          উভয় প্ল্যাটফর্মের টেকনিক্যাল স্পেসিফিকেশন
+        </h2>
+        <p class="text-slate-400 text-base">
+          আপনার ডিভাইস অনুযায়ী সঠিক সংস্করণটি বেছে নিন। উভয় ভার্সনেই সর্বোচ্চ পারফরম্যান্স অপ্টিমাইজড।
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Windows Spec Card -->
+        <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/40 transition-all duration-300">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                <i data-lucide="monitor" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Windows সংস্করণ</h3>
+                <span class="text-xs text-slate-400">ডেস্কটপ ও ল্যাপটপ ক্লায়েন্ট</span>
+              </div>
+            </div>
+            <span class="text-xs font-mono font-bold text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30">
+              v1.0 EXE
+            </span>
+          </div>
+
+          <div class="space-y-3 text-sm border-t border-slate-800/80 pt-6">
+            <div class="flex justify-between py-1 border-b border-slate-800/40">
+              <span class="text-slate-400">অপারেটিং সিস্টেম</span>
+              <span class="text-white font-medium">Windows 10, Windows 11 (64-bit)</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-800/40">
+              <span class="text-slate-400">ফাইলের আকার</span>
+              <span class="text-white font-medium">~২৪.০ MB</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-800/40">
+              <span class="text-slate-400">র‍্যাম প্রয়োজনীয়তা</span>
+              <span class="text-white font-medium">ন্যূনতম ৫১২ MB ফ্রি র‍্যাম</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-800/40">
+              <span class="text-slate-400">ব্যাকগ্রাউন্ড সার্ভিস</span>
+              <span class="text-emerald-400 font-medium">লাইটওয়েট সিস্টেম ট্রে</span>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <a href="downloads/helpniche-setup-v1.0.exe" download="Helpniche-Setup-v1.0.exe" data-os="windows" class="btn-download-action w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition-all">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Windows Installer ডাউনলোড (.exe)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Android Spec Card -->
+        <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-emerald-500/40 transition-all duration-300">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <i data-lucide="smartphone" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Android সংস্করণ</h3>
+                <span class="text-xs text-slate-400">স্মার্টফোন ও ট্যাবলেট অ্যাপ</span>
+              </div>
+            </div>
+            <span class="text-xs font-mono font-bold text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+              v1.0 APK
+            </span>
+          </div>
+
+          <div class="space-y-3 text-sm border-t border-slate-800/80 pt-6">
+            <div class="flex justify-between py-1 border-b border-slate-800/40">
+              <span class="text-slate-400">অপারেটিং সিস্টেম</span>
+              <span class="text-white font-medium">Android 6.0 (Marshmallow) থেকে Android 15</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-800/40">
+              <span class="text-slate-400">ফাইলের আকার</span>
+              <span class="text-white font-medium">মাত্র ৬.৫ MB (Less than 7 MB)</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-800/40">
+              <span class="text-slate-400">রুট পারমিশন</span>
+              <span class="text-emerald-400 font-medium">কোনো রুট প্রয়োজন নেই</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-800/40">
+              <span class="text-slate-400">ব্যাটারি খরচ</span>
+              <span class="text-emerald-400 font-medium">&lt; ১% সারাদিনে (অপ্টিমাইজড)</span>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <a href="downloads/helpniche-v1.0.apk" download="Helpniche-v1.0.apk" data-os="android" class="btn-download-action w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Android APK ডাউনলোড (৬.৫ MB)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Interactive Screenshots Showcase -->
+  <section id="showcase" class="py-24 bg-[#0A0E14] border-y border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20 font-mono">
+          LIVE INTERFACE
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white">
+          অভিজ্ঞতা করুন <span class="gradient-text">প্রকৃত ইন্টারফেস</span>
+        </h2>
+        <p class="text-slate-400 text-base">
+          ট্যাবগুলোতে ক্লিক করে অ্যাপের মূল স্ক্রিনগুলো সরাসরি ইন্টারঅ্যাক্ট করে দেখে নিন।
+        </p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+        <button type="button" data-screen="home" class="screen-tab-btn flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition-all duration-200 bg-emerald-500/20 border-emerald-500 text-emerald-400">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>১. হোম ড্যাশবোর্ড ও ফায়ারওয়াল</span>
+        </button>
+        <button type="button" data-screen="streak" class="screen-tab-btn flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition-all duration-200 bg-slate-900/60 border-slate-800 text-slate-400 hover:text-white">
+          <i data-lucide="flame" class="w-4 h-4"></i>
+          <span>২. Iron Will স্ট্রিক ট্র্যাকার</span>
+        </button>
+        <button type="button" data-screen="routine" class="screen-tab-btn flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition-all duration-200 bg-slate-900/60 border-slate-800 text-slate-400 hover:text-white">
+          <i data-lucide="calendar-check" class="w-4 h-4"></i>
+          <span>৩. রুটিন ও আমল রিমাইন্ডার</span>
+        </button>
+      </div>
+
+      <!-- Big Preview Display -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center max-w-5xl mx-auto bg-slate-900/40 p-6 sm:p-12 rounded-3xl border border-slate-800/80">
+        
+        <div class="lg:col-span-6 flex justify-center">
+          <div class="phone-mockup-frame w-full max-w-[275px]">
+            <div class="phone-notch"></div>
+            <div class="phone-screen aspect-[9/19.5]">
+              <img id="showcase-screen-img" src="assets/images/screen-home.png" alt="Helpniche Interface" class="w-full h-full object-cover transition-opacity duration-200">
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>লাইভ প্রিভিউ</span>
+          </div>
+
+          <h3 id="showcase-screen-title" class="text-2xl sm:text-3xl font-extrabold text-white">
+            সেন্ট্রাল ফোকাস ও ডিজিটাল ফায়ারওয়াল
+          </h3>
+
+          <p id="showcase-screen-desc" class="text-slate-300 text-base leading-relaxed">
+            সোশ্যাল মিডিয়া, ক্ষতিকর সাইট ও নেটওয়ার্ক ট্র্যাফিক সম্পূর্ণ নিজের নিয়ন্ত্রণে রেখে উৎপাদনশীলতা বহু গুণ বাড়িয়ে তুলুন।
+          </p>
+
+          <div class="space-y-3 pt-2 text-sm text-slate-300">
+            <div class="flex items-center gap-3 justify-center lg:justify-start">
+              <i data-lucide="check" class="w-5 h-5 text-emerald-400"></i>
+              <span>চোখের স্বস্তিদায়ক ডার্ক মোড ইন্টারফেস</span>
+            </div>
+            <div class="flex items-center gap-3 justify-center lg:justify-start">
+              <i data-lucide="check" class="w-5 h-5 text-emerald-400"></i>
+              <span>সহজ বাংলা ও আন্তর্জাতিক ইংরেজি সাপোর্ট</span>
+            </div>
+            <div class="flex items-center gap-3 justify-center lg:justify-start">
+              <i data-lucide="check" class="w-5 h-5 text-emerald-400"></i>
+              <span>অফলাইন ফার্স্ট প্রযুক্তি—তথ্য বাইরে যায় না</span>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
+            <a href="downloads/helpniche-v1.0.apk" download="Helpniche-v1.0.apk" data-os="android" class="btn-download-action inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all">
+              <i data-lucide="smartphone" class="w-4 h-4"></i>
+              <span>ফোনে ইনস্টল করুন</span>
+            </a>
+            <a href="downloads/helpniche-setup-v1.0.exe" download="Helpniche-Setup-v1.0.exe" data-os="windows" class="btn-download-action inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition-all">
+              <i data-lucide="monitor" class="w-4 h-4 text-cyan-400"></i>
+              <span>পিসিতে ইনস্টল করুন</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. Step-by-Step Installation Guide -->
+  <section id="installation" class="py-24 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20 font-mono">
+          EASY SETUP
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          সহজ ইনস্টলেশন নির্দেশিকা
+        </h2>
+        <p class="text-slate-400 text-base">
+          কোনো জটিলতা ছাড়াই মাত্র ২ মিনিটে আপনার পছন্দের ডিভাইসে ইনস্টল করে নিন।
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        
+        <!-- Android Steps -->
+        <div class="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+              <i data-lucide="smartphone" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">অ্যান্ড্রয়েড ফোন সেটআপ</h3>
+          </div>
+
+          <div class="space-y-4 text-sm text-slate-300">
+            <div class="flex gap-4">
+              <span class="w-7 h-7 rounded-full bg-slate-800 text-emerald-400 flex items-center justify-center font-bold font-mono flex-shrink-0">১</span>
+              <div>
+                <strong class="text-white block mb-0.5">APK ডাউনলোড করুন</strong>
+                'Android APK ডাউনলোড' বাটনে চাপ দিয়ে অফিশিয়াল ফাইলটি ফোনে সেভ করুন।
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="w-7 h-7 rounded-full bg-slate-800 text-emerald-400 flex items-center justify-center font-bold font-mono flex-shrink-0">২</span>
+              <div>
+                <strong class="text-white block mb-0.5">অনুমতি দিন (Allow Permission)</strong>
+                ডাউনলোড শেষে ফাইলে ক্লিক করে 'Allow from this source' অপশনটি অন করুন।
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="w-7 h-7 rounded-full bg-slate-800 text-emerald-400 flex items-center justify-center font-bold font-mono flex-shrink-0">৩</span>
+              <div>
+                <strong class="text-white block mb-0.5">ইনস্টল ও ব্যবহার শুরু</strong>
+                'Install' বাটনে চাপ দিন এবং অ্যাপটি চালু করে আপনার নিজস্ব গোল সেট করুন।
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Windows Steps -->
+        <div class="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+              <i data-lucide="monitor" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">উইন্ডোজ পিসি সেটআপ</h3>
+          </div>
+
+          <div class="space-y-4 text-sm text-slate-300">
+            <div class="flex gap-4">
+              <span class="w-7 h-7 rounded-full bg-slate-800 text-cyan-400 flex items-center justify-center font-bold font-mono flex-shrink-0">১</span>
+              <div>
+                <strong class="text-white block mb-0.5">Setup ফাইল ডাউনলোড করুন</strong>
+                'Windows Installer' বাটনে ক্লিক করে .exe ফাইলটি ডাউনলোড করুন।
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="w-7 h-7 rounded-full bg-slate-800 text-cyan-400 flex items-center justify-center font-bold font-mono flex-shrink-0">২</span>
+              <div>
+                <strong class="text-white block mb-0.5">ইনস্টলার রান করুন</strong>
+                ডাউনলোড হওয়া Helpniche-Setup.exe ফাইলে ডাবল ক্লিক করে নির্দেশনা অনুসরণ করুন।
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="w-7 h-7 rounded-full bg-slate-800 text-cyan-400 flex items-center justify-center font-bold font-mono flex-shrink-0">৩</span>
+              <div>
+                <strong class="text-white block mb-0.5">ডেস্কটপ ফোকাস উপভোগ করুন</strong>
+                অ্যাপটি ওপেন করে ফায়ারওয়াল মোড চালু করুন ও নিবিষ্ট মনে কাজ করুন।
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. Frequently Asked Questions (FAQ) -->
+  <section id="faq" class="py-24 bg-[#0A0E14] border-t border-slate-800/60 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20 font-mono">
+          KNOWLEDGE BASE
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white">
+          সাধারণ জিজ্ঞাসা ও উত্তর
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="border border-slate-800 rounded-2xl bg-slate-900/60 overflow-hidden">
+          <button class="faq-toggle w-full p-6 text-left flex items-center justify-between text-base sm:text-lg font-bold text-white hover:text-emerald-400 transition-colors">
+            <span>উইন্ডোজ এবং মোবাইল উভয় ডিভাইসেই কি একই ডাটা পাওয়া যাবে?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+            হ্যাঁ, আপনি একই অ্যাকাউন্ট দিয়ে লগইন করলে আপনার Iron Will স্ট্রিক, ফোকাস হিস্ট্রি এবং প্রিফারেন্স উভয় ডিভাইসেই স্বয়ংক্রিয়ভাবে সিঙ্ক থাকবে।
+          </div>
+        </div>
+
+        <div class="border border-slate-800 rounded-2xl bg-slate-900/60 overflow-hidden">
+          <button class="faq-toggle w-full p-6 text-left flex items-center justify-between text-base sm:text-lg font-bold text-white hover:text-emerald-400 transition-colors">
+            <span>অ্যাপটি ব্যবহার করলে কি কম্পিউটারের গতি বা ফোনের ব্যাটারি কমে যাবে?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+            একদমই না। Helpniche সম্পূর্ণ আধুনিক ও অপ্টিমাইজড আর্কিটেকচারে তৈরি। অ্যান্ড্রয়েডে এর সাইজ মাত্র ৬.৫ মেগাবাইট এবং এটি ব্যাকগ্রাউন্ডে ১% এরও কম ব্যাটারি ব্যবহার করে।
+          </div>
+        </div>
+
+        <div class="border border-slate-800 rounded-2xl bg-slate-900/60 overflow-hidden">
+          <button class="faq-toggle w-full p-6 text-left flex items-center justify-between text-base sm:text-lg font-bold text-white hover:text-emerald-400 transition-colors">
+            <span>আমার ব্যক্তিগত তথ্য বা ব্রাউজিং হিস্ট্রি কি নিরাপদ?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+            শতভাগ নিরাপদ। Helpniche জিরো-টেলিমেট্রি এবং লোকাল-ফার্স্ট নীতিতে কাজ করে। আপনার কোনো ব্রাউজিং হিস্ট্রি বা ব্যক্তিগত ডেটা বাইরের কোনো সার্ভারে পাঠানো হয় না।
+          </div>
+        </div>
+
+        <div class="border border-slate-800 rounded-2xl bg-slate-900/60 overflow-hidden">
+          <button class="faq-toggle w-full p-6 text-left flex items-center justify-between text-base sm:text-lg font-bold text-white hover:text-emerald-400 transition-colors">
+            <span>পরবর্তী আপডেটগুলো কি ওয়েবসাইট থেকেই সরাসরি পাওয়া যাবে?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+            হ্যাঁ, যেকোনো নতুন সংস্করণ বা সিকিউরিটি প্যাচ এলে আমাদের এই অফিশিয়াল ওয়েবসাইটেই সবার আগে সরাসরি ডাউনলোড লিঙ্ক উন্মুক্ত করা হবে।
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. Final Call to Action -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative overflow-hidden rounded-3xl p-10 sm:p-16 text-center bg-gradient-to-b from-[#111924] to-[#080D14] border border-emerald-500/30 shadow-[0_0_60px_rgba(0,230,118,0.15)]">
+        
+        <div class="relative z-10 space-y-6 max-w-2xl mx-auto">
+          <div class="w-16 h-16 mx-auto rounded-2xl overflow-hidden border border-emerald-400/60 shadow-xl">
+            <img src="assets/images/logo.jpg" alt="Helpniche Icon" class="w-full h-full object-cover">
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-black text-white leading-tight">
+            আজই শুরু হোক আপনার <br>
+            <span class="gradient-text">ডিজিটাল মুক্ত জীবনের যাত্রা</span>
+          </h2>
+
+          <p class="text-slate-300 text-base sm:text-lg">
+            স্মার্টফোন কিংবা কম্পিউটার—আপনার প্রিয় ডিভাইসে Helpniche নামিয়ে নিন এবং সময়ের প্রকৃত সদ্ব্যবহার শুরু করুন।
+          </p>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="downloads/helpniche-setup-v1.0.exe" download="Helpniche-Setup-v1.0.exe" data-os="windows" class="btn-download-action btn-pulse-glow w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-base transition-all">
+              <i data-lucide="monitor" class="w-5 h-5"></i>
+              <span>Windows Installer (.exe)</span>
+            </a>
+            <a href="downloads/helpniche-v1.0.apk" download="Helpniche-v1.0.apk" data-os="android" class="btn-download-action btn-pulse-glow w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-base transition-all">
+              <i data-lucide="smartphone" class="w-5 h-5"></i>
+              <span>Android APK (৬.৫ MB)</span>
+            </a>
+          </div>
+
+          <div class="text-xs text-slate-500 pt-2 font-mono">
+            সংস্করণ: 1.0 PRO • সম্পূর্ণ বিজ্ঞাপন মুক্ত • নিরাপদ ও সুরক্ষিত
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Footer -->
+  <footer class="border-t border-slate-800/80 bg-[#040608] py-14 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logo.jpg" alt="Logo" class="w-9 h-9 rounded-xl object-cover border border-emerald-500/40">
+          <div>
+            <span class="text-lg font-black text-white font-['Outfit'] block leading-tight">Helpniche</span>
+            <span class="text-[11px] text-slate-500">Cross-Platform Self-Discipline System</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+          <a href="#features" class="hover:text-emerald-400 transition-colors">ফিচারসমূহ</a>
+          <a href="#cross-platform" class="hover:text-emerald-400 transition-colors">স্পেসিফিকেশন</a>
+          <a href="#showcase" class="hover:text-emerald-400 transition-colors">প্রিভিউ</a>
+          <a href="#installation" class="hover:text-emerald-400 transition-colors">ইনস্টলেশন গাইড</a>
+          <a href="#faq" class="hover:text-emerald-400 transition-colors">সাধারণ জিজ্ঞাসা</a>
+        </div>
+
+        <div class="text-xs text-slate-500 text-center md:text-right">
+          &copy; ২০২৬ Helpniche Software Technologies. সর্বস্বত্ব সংরক্ষিত।
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- 10. Dynamic Toast Notification -->
+  <div id="download-toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 max-w-sm w-full">
+    <div class="p-4 rounded-2xl bg-slate-900 border border-emerald-500/60 shadow-[0_0_30px_rgba(0,230,118,0.3)] flex items-start gap-3 backdrop-blur-xl">
+      <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+        <i data-lucide="check-circle" class="w-5 h-5"></i>
+      </div>
+      <div class="flex-1">
+        <h4 id="toast-title" class="text-sm font-bold text-white">ডাউনলোড শুরু হয়েছে!</h4>
+        <p id="toast-msg" class="text-xs text-slate-300 mt-0.5 leading-relaxed">
+          ইনস্টলারটি রান করে অ্যাপ সেটআপ সম্পন্ন করুন।
+        </p>
+      </div>
+      <button id="toast-close" type="button" class="text-slate-400 hover:text-white p-1" aria-label="Close notification">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Lucide Icons Initialization -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Custom Main JS -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg-dark: #06090D;
+  --bg-card: #0D131C;
+  --bg-card-hover: #121A26;
+  --neon-green: #00E676;
+  --neon-cyan: #00D2FF;
+  --neon-gold: #FFB703;
+  --neon-purple: #8B5CF6;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-glow: rgba(0, 230, 118, 0.28);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+
+/* Glassmorphism Navigation */
+.nav-blur {
+  background: rgba(6, 9, 13, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Gradients */
+.gradient-text {
+  background: linear-gradient(135deg, #00E676 0%, #00D2FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-alt {
+  background: linear-gradient(135deg, #FFFFFF 30%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Bento Card Style */
+.bento-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 230, 118, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(0, 230, 118, 0.12);
+  background: var(--bg-card-hover);
+}
+
+/* Phone Mockup Frame */
+.phone-mockup-frame {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 46px;
+  padding: 10px;
+  background: linear-gradient(145deg, #1e293b, #090d12);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.9),
+              0 0 45px rgba(0, 230, 118, 0.22),
+              inset 0 0 2px rgba(255, 255, 255, 0.2);
+  border: 3px solid #273549;
+}
+
+.phone-screen {
+  position: relative;
+  border-radius: 36px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.phone-screen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 86px;
+  height: 18px;
+  background-color: #090d12;
+  border-radius: 12px;
+  z-index: 10;
+}
+
+/* Desktop App Window Mockup */
+.desktop-window-frame {
+  position: relative;
+  width: 100%;
+  background: #0D131C;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 35px 80px -20px rgba(0, 0, 0, 0.9),
+              0 0 50px rgba(0, 210, 255, 0.12);
+  overflow: hidden;
+}
+
+.window-header {
+  background: #111823;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.window-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.window-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* Ambient Radial Glows */
+.ambient-glow-hero {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 550px;
+  background: radial-gradient(ellipse at center, rgba(0, 230, 118, 0.12) 0%, rgba(0, 210, 255, 0.08) 45%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+/* Platform Switcher Buttons */
+.platform-pill {
+  transition: all 0.25s ease;
+}
+
+.platform-pill.active {
+  background: #00E676;
+  color: #06090D;
+  box-shadow: 0 0 25px rgba(0, 230, 118, 0.45);
+}
+
+.platform-pill.inactive {
+  background: rgba(255, 255, 255, 0.04);
+  color: #94A3B8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.platform-pill.inactive:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #F8FAFC;
+}
+
+/* Button Glow Pulse */
+@keyframes pulseButton {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 230, 118, 0.7);
+  }
+}
+
+.btn-pulse-glow {
+  animation: pulseButton 3.5s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #06090D;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
