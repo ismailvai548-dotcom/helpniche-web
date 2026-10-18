@@ -141,45 +141,33 @@ body {
   animation: floatPhone 4.5s infinite ease-in-out;
 }
 
-/* Phone Mockup Frame */
+/* Clean Modern Android Device Frame (No fake iPhone notch) */
 .phone-mockup-frame {
   position: relative;
   width: 100%;
-  max-width: 285px;
-  border-radius: 42px;
-  padding: 9px;
-  background: linear-gradient(145deg, #1e293b, #090d12);
-  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95),
-              0 0 45px rgba(0, 230, 118, 0.25),
+  max-width: 290px;
+  border-radius: 38px;
+  padding: 8px;
+  background: linear-gradient(145deg, #1e293b, #0a0f15);
+  box-shadow: 0 25px 65px -15px rgba(0, 0, 0, 0.95),
+              0 0 40px rgba(0, 230, 118, 0.22),
               inset 0 0 2px rgba(255, 255, 255, 0.2);
-  border: 2.5px solid #273549;
+  border: 2px solid #283548;
   margin: 0 auto;
 }
 
 .phone-screen {
   position: relative;
-  border-radius: 34px;
+  border-radius: 30px;
   overflow: hidden;
   background: #000;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.7);
 }
 
 .phone-screen img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.phone-notch {
-  position: absolute;
-  top: 13px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 16px;
-  background-color: #090d12;
-  border-radius: 10px;
-  z-index: 10;
 }
 
 /* Bento Card Style */
