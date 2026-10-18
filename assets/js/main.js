@@ -2,9 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Mobile Navbar Toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
     });
   }
 
@@ -19,12 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const navDownloadBtn = document.getElementById('nav-sticky-download-btn');
   const bottomDownloadBtn = document.getElementById('bottom-cta-download-btn');
   
-  const specVersion = document.getElementById('spec-version');
-  const specSize = document.getElementById('spec-size');
-  const specOs = document.getElementById('spec-os');
-  const specPoint1 = document.getElementById('spec-point-1');
-  const specPoint2 = document.getElementById('spec-point-2');
-  const specPoint3 = document.getElementById('spec-point-3');
+  const chip1 = document.getElementById('chip-point-1');
+  const chip2 = document.getElementById('chip-point-2');
+  const chip3 = document.getElementById('chip-point-3');
 
   let currentPlatform = 'android';
 
@@ -40,21 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
         btnPlatformAndroid.classList.add('inactive');
       }
 
-      // Update Hero Button
+      // Update Hero Download Button
       if (heroDownloadBtn) {
         heroDownloadBtn.href = 'downloads/helpniche-setup-v1.0.exe';
         heroDownloadBtn.setAttribute('download', 'Helpniche-Setup-v1.0.exe');
         heroDownloadBtn.setAttribute('data-os', 'windows');
       }
-      if (heroBtnText) heroBtnText.textContent = '⬇ Windows Installer ডাউনলোড করুন';
-      if (heroBtnSub) heroBtnSub.textContent = 'সংস্করণ v1.0 • ~২৪.০ MB • Windows 10/11 (64-bit)';
+      if (heroBtnText) heroBtnText.textContent = '⬇ Windows Setup ডাউনলোড';
+      if (heroBtnSub) heroBtnSub.textContent = 'সংস্করণ v1.0 • ~২৪.০ MB • Windows 10/11';
 
       // Update Sticky Nav Button
       if (navDownloadBtn) {
         navDownloadBtn.href = 'downloads/helpniche-setup-v1.0.exe';
         navDownloadBtn.setAttribute('download', 'Helpniche-Setup-v1.0.exe');
         navDownloadBtn.setAttribute('data-os', 'windows');
-        navDownloadBtn.innerHTML = '<i data-lucide="monitor" class="w-4 h-4"></i><span>Windows Setup</span>';
+        navDownloadBtn.innerHTML = '<i data-lucide="monitor" class="w-3.5 h-3.5"></i><span>PC Setup</span>';
         if (window.lucide) lucide.createIcons();
       }
 
@@ -65,13 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
         bottomDownloadBtn.setAttribute('data-os', 'windows');
       }
 
-      // Update Spec info
-      if (specVersion) specVersion.textContent = 'v1.0';
-      if (specSize) specSize.textContent = '~২৪.০ MB';
-      if (specOs) specOs.textContent = 'Windows 10/11 (64-bit)';
-      if (specPoint1) specPoint1.textContent = 'এক-ক্লিকে ইন্সটলার';
-      if (specPoint2) specPoint2.textContent = 'লাইটওয়েট ব্যাকগ্রাউন্ড সার্ভিস';
-      if (specPoint3) specPoint3.textContent = 'সুপার ফাস্ট পারফরম্যান্স';
+      // Update Compact Chips
+      if (chip1) chip1.textContent = 'এক-ক্লিকে ইনস্টলার';
+      if (chip2) chip2.textContent = 'লাইটওয়েট ব্যাকগ্রাউন্ড';
+      if (chip3) chip3.textContent = 'সুপার ফাস্ট';
 
     } else {
       if (btnPlatformAndroid) {
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnPlatformWindows.classList.add('inactive');
       }
 
-      // Update Hero Button
+      // Update Hero Download Button
       if (heroDownloadBtn) {
         heroDownloadBtn.href = 'downloads/helpniche-v1.0.apk';
         heroDownloadBtn.setAttribute('download', 'Helpniche-v1.0.apk');
@@ -97,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navDownloadBtn.href = 'downloads/helpniche-v1.0.apk';
         navDownloadBtn.setAttribute('download', 'Helpniche-v1.0.apk');
         navDownloadBtn.setAttribute('data-os', 'android');
-        navDownloadBtn.innerHTML = '<i data-lucide="download" class="w-4 h-4"></i><span>ডাউনলোড APK</span>';
+        navDownloadBtn.innerHTML = '<i data-lucide="download" class="w-3.5 h-3.5"></i><span>ডাউনলোড APK</span>';
         if (window.lucide) lucide.createIcons();
       }
 
@@ -108,13 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
         bottomDownloadBtn.setAttribute('data-os', 'android');
       }
 
-      // Update Spec info
-      if (specVersion) specVersion.textContent = 'v1.0';
-      if (specSize) specSize.textContent = '৬.৫ MB (Less than 7 MB)';
-      if (specOs) specOs.textContent = 'Android 6.0+ সমর্থিত';
-      if (specPoint1) specPoint1.textContent = 'কোনো রুট প্রয়োজন নেই';
-      if (specPoint2) specPoint2.textContent = 'ব্যাটারি অপ্টিমাইজড';
-      if (specPoint3) specPoint3.textContent = 'সুপার ফাস্ট';
+      // Update Compact Chips
+      if (chip1) chip1.textContent = 'কোনো রুট প্রয়োজন নেই';
+      if (chip2) chip2.textContent = 'ব্যাটারি অপ্টিমাইজড';
+      if (chip3) chip3.textContent = 'সুপার ফাস্ট';
     }
   }
 
@@ -125,15 +124,16 @@ document.addEventListener('DOMContentLoaded', () => {
     btnPlatformWindows.addEventListener('click', () => applyPlatform('windows'));
   }
 
-  // Default selection: Android is primary as requested for APK focus
+  // Default to Android
   applyPlatform('android');
 
-  // 3. Download Trigger Toast Notification (Only appears on user click!)
+  // 3. Download Trigger Toast Notification (Only on user click, 4s auto-dismiss)
   const downloadBtns = document.querySelectorAll('.btn-download-action');
   const toast = document.getElementById('download-toast');
   const toastTitle = document.getElementById('toast-title');
   const toastMsg = document.getElementById('toast-msg');
   const toastClose = document.getElementById('toast-close');
+  let toastTimer = null;
 
   downloadBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -145,21 +145,26 @@ document.addEventListener('DOMContentLoaded', () => {
           if (toastMsg) toastMsg.textContent = 'ডাউনলোড শেষে Helpniche-Setup-v1.0.exe ফাইলটি রান করুন।';
         } else {
           if (toastTitle) toastTitle.textContent = 'Helpniche APK ডাউনলোড শুরু হয়েছে!';
-          if (toastMsg) toastMsg.textContent = 'ডাউনলোড সম্পন্ন হলে নোটিফিকেশন থেকে ফাইলটি ওপেন করে ইনস্টল করুন।';
+          if (toastMsg) toastMsg.textContent = 'ডাউনলোড সম্পন্ন হলে ফাইলটি ওপেন করে ইনস্টল করুন।';
         }
+
+        // Clear existing timer if any
+        if (toastTimer) clearTimeout(toastTimer);
 
         toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
         toast.classList.add('translate-y-0', 'opacity-100');
 
-        setTimeout(() => {
+        // Auto dismiss strictly after 4 seconds
+        toastTimer = setTimeout(() => {
           toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
-        }, 7000);
+        }, 4000);
       }
     });
   });
 
   if (toastClose && toast) {
     toastClose.addEventListener('click', () => {
+      if (toastTimer) clearTimeout(toastTimer);
       toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
     });
   }

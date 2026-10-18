@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap');
 
 :root {
   --bg-dark: #06090D;
@@ -24,18 +24,43 @@ html {
 }
 
 body {
-  font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Hind Siliguri', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-main);
   overflow-x: hidden;
-  line-height: 1.6;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Background Depth & Subtle Gradient Variations */
+.bg-mesh-dark {
+  background-color: #06090D;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 230, 118, 0.07) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 210, 255, 0.06) 0px, transparent 50%);
+}
+
+.section-depth {
+  background: linear-gradient(180deg, rgba(13, 19, 28, 0.6) 0%, rgba(6, 9, 13, 0.95) 100%);
+}
+
+/* Fluid Responsive Typography */
+.hero-fluid-title {
+  font-size: clamp(1.75rem, 5vw, 3.75rem);
+  line-height: 1.2;
+}
+
+.hero-fluid-sub {
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  line-height: 1.55;
 }
 
 /* Sticky Navbar Blur */
 .nav-blur {
   background: rgba(6, 9, 13, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
@@ -51,33 +76,33 @@ body {
   background: linear-gradient(135deg, #00E676 0%, #00C853 45%, #00D2FF 100%);
   color: #06090D;
   font-weight: 800;
-  box-shadow: 0 10px 30px -5px rgba(0, 230, 118, 0.5), 0 0 20px rgba(0, 210, 255, 0.3);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 25px -4px rgba(0, 230, 118, 0.45), 0 0 15px rgba(0, 210, 255, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
 
 .btn-hero-download:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 16px 40px -5px rgba(0, 230, 118, 0.7), 0 0 30px rgba(0, 210, 255, 0.5);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 14px 35px -4px rgba(0, 230, 118, 0.65), 0 0 25px rgba(0, 210, 255, 0.45);
 }
 
 .btn-hero-download:active {
-  transform: translateY(0) scale(0.99);
+  transform: translateY(0) scale(0.98);
 }
 
 /* Pulse animation */
 @keyframes heroPulse {
   0%, 100% {
-    box-shadow: 0 10px 30px -5px rgba(0, 230, 118, 0.4), 0 0 15px rgba(0, 210, 255, 0.2);
+    box-shadow: 0 8px 25px -4px rgba(0, 230, 118, 0.35), 0 0 15px rgba(0, 210, 255, 0.2);
   }
   50% {
-    box-shadow: 0 14px 42px -3px rgba(0, 230, 118, 0.8), 0 0 35px rgba(0, 210, 255, 0.5);
+    box-shadow: 0 12px 35px -2px rgba(0, 230, 118, 0.7), 0 0 30px rgba(0, 210, 255, 0.45);
   }
 }
 
 .hero-pulse {
-  animation: heroPulse 3s infinite ease-in-out;
+  animation: heroPulse 3.5s infinite ease-in-out;
 }
 
 /* Floating Mockup Animation */
@@ -86,32 +111,32 @@ body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-8px);
   }
 }
 
 .floating-phone {
-  animation: floatPhone 5s infinite ease-in-out;
+  animation: floatPhone 4.5s infinite ease-in-out;
 }
 
 /* Phone Mockup Frame */
 .phone-mockup-frame {
   position: relative;
   width: 100%;
-  max-width: 295px;
-  border-radius: 46px;
-  padding: 10px;
+  max-width: 275px;
+  border-radius: 40px;
+  padding: 8px;
   background: linear-gradient(145deg, #1e293b, #090d12);
-  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.9),
-              0 0 45px rgba(0, 230, 118, 0.25),
-              inset 0 0 2px rgba(255, 255, 255, 0.2);
-  border: 3px solid #273549;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9),
+              0 0 40px rgba(0, 230, 118, 0.2),
+              inset 0 0 2px rgba(255, 255, 255, 0.15);
+  border: 2.5px solid #273549;
   margin: 0 auto;
 }
 
 .phone-screen {
   position: relative;
-  border-radius: 36px;
+  border-radius: 32px;
   overflow: hidden;
   background: #000;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
@@ -125,56 +150,70 @@ body {
 
 .phone-notch {
   position: absolute;
-  top: 14px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 86px;
-  height: 18px;
+  width: 76px;
+  height: 16px;
   background-color: #090d12;
-  border-radius: 12px;
+  border-radius: 10px;
   z-index: 10;
 }
 
-/* Bento & Feature Cards */
+/* Cards & Bento Grid */
 .bento-card {
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
 }
 
 .bento-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: rgba(0, 230, 118, 0.35);
-  box-shadow: 0 20px 40px -15px rgba(0, 230, 118, 0.12);
+  box-shadow: 0 16px 35px -12px rgba(0, 230, 118, 0.12);
   background: var(--bg-card-hover);
 }
 
-/* Ambient Radial Glows */
-.hero-glow-back {
-  position: absolute;
-  top: 40%;
-  right: 15%;
-  transform: translateY(-50%);
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(0, 230, 118, 0.2) 0%, rgba(0, 210, 255, 0.12) 40%, rgba(0,0,0,0) 70%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(65px);
+/* Compact Checkmark Chip */
+.check-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 9999px;
+  background: rgba(13, 19, 28, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  white-space: nowrap;
+}
+
+/* Scroll Hint Animation */
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.scroll-indicator {
+  animation: scrollBounce 2s infinite ease-in-out;
 }
 
 /* Platform Switcher Pills */
 .platform-pill {
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .platform-pill.active {
   background: #00E676;
   color: #06090D;
-  box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+  box-shadow: 0 0 16px rgba(0, 230, 118, 0.4);
 }
 
 .platform-pill.inactive {
@@ -188,18 +227,22 @@ body {
   color: #F8FAFC;
 }
 
-/* Mobile 360px Safeguards */
-@media (max-width: 380px) {
+/* 360px Mobile Safeguards */
+@media (max-width: 384px) {
   .phone-mockup-frame {
-    max-width: 250px;
-    border-radius: 38px;
-    padding: 8px;
+    max-width: 235px;
+    border-radius: 34px;
+    padding: 7px;
   }
   .phone-screen {
-    border-radius: 28px;
+    border-radius: 26px;
   }
-  .btn-hero-download {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .phone-notch {
+    width: 65px;
+    height: 14px;
+  }
+  .check-chip {
+    font-size: 0.7rem;
+    padding: 4px 8px;
   }
 }
