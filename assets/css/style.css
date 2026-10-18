@@ -485,3 +485,47 @@ p, span.body-text, li, .font-kalpurush {
     box-shadow: 0 8px 25px rgba(34, 158, 217, 0.55), 0 0 20px rgba(34, 158, 217, 0.35);
   }
 }
+
+/* ============================================================
+   MOBILE-ONLY BORDERLESS & SEAMLESS DESIGN (@media max-width: 767px)
+   Removes repetitive bulky shapes and box-in-box cages on mobile,
+   while preserving Desktop 100% rich, interactive, and intact.
+   ============================================================ */
+@media (max-width: 767px) {
+  /* 1. Transform bulky rectangular bento cards into clean, borderless blocks */
+  .bento-card-pro {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    padding-top: 20px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .bento-card-pro:last-child {
+    border-bottom: none !important;
+  }
+
+  /* 2. Flatten inner nested boxes (eliminating boxes inside boxes) */
+  .bento-card-pro div[class*="bg-[#070B10]"],
+  .bento-card-pro div[class*="bg-slate-900"] {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 16px !important;
+    box-shadow: none !important;
+  }
+
+  /* 3. Section spacing optimization for mobile */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* 4. Interactive focal points remain crisp */
+  #btn-panic-trigger {
+    border-radius: 9999px !important;
+  }
+}
