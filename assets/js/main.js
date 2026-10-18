@@ -44,7 +44,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Interactive Showcase Screenshot Switcher
+  // 3. Interactive Focus Lock Preset Switcher
+  const focusPills = document.querySelectorAll('.focus-time-pill');
+  const focusTimerDisplay = document.getElementById('focus-timer-clock');
+  const focusProgressCircle = document.getElementById('focus-ring-progress');
+
+  focusPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const timeVal = pill.getAttribute('data-time');
+      const offsetVal = pill.getAttribute('data-offset') || '75';
+
+      focusPills.forEach(p => {
+        p.classList.remove('bg-emerald-500', 'text-slate-950', 'border-emerald-400');
+        p.classList.add('bg-slate-900', 'text-slate-300', 'border-slate-800');
+      });
+
+      pill.classList.remove('bg-slate-900', 'text-slate-300', 'border-slate-800');
+      pill.classList.add('bg-emerald-500', 'text-slate-950', 'border-emerald-400');
+
+      if (focusTimerDisplay) focusTimerDisplay.textContent = timeVal;
+      if (focusProgressCircle) focusProgressCircle.style.strokeDashoffset = offsetVal;
+    });
+  });
+
+  // 4. Interactive Showcase Screenshot Switcher
   const screenTabs = document.querySelectorAll('.screen-tab-btn');
   const screenImg = document.getElementById('showcase-screen-img');
   const screenTitle = document.getElementById('showcase-screen-title');
@@ -90,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Panic SOS Interactive Simulation Modal
+  // 5. Panic SOS Interactive Simulation Modal
   const panicTriggerBtn = document.getElementById('btn-panic-trigger');
   const panicModal = document.getElementById('panic-sos-modal');
   const panicCloseBtn = document.getElementById('btn-panic-close');
@@ -126,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Donation / Hadia Copy Button
+  // 6. Donation / Hadia Copy Button
   const copyBtns = document.querySelectorAll('.btn-copy-number');
   copyBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -145,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. FAQ Accordion Toggle
+  // 7. FAQ Accordion Toggle
   const faqToggles = document.querySelectorAll('.faq-toggle');
   faqToggles.forEach(toggle => {
     toggle.addEventListener('click', () => {

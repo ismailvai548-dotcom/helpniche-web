@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap');
 
 :root {
-  --bg-dark: #06090D;
-  --bg-card: #0D131C;
-  --bg-card-hover: #121A26;
+  --bg-dark: #05080C;
+  --bg-card: #0A0F17;
+  --bg-card-hover: #0E1622;
   --neon-green: #00E676;
   --neon-cyan: #00D2FF;
   --neon-gold: #FFB703;
@@ -13,6 +13,7 @@
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
   --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow-green: rgba(0, 230, 118, 0.3);
 }
 
 * {
@@ -34,34 +35,37 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Background Depth */
+/* Background Depth & Micro-Pattern */
 .bg-mesh-dark {
-  background-color: #06090D;
+  background-color: #05080C;
   background-image: 
-    radial-gradient(at 50% 0%, rgba(0, 230, 118, 0.08) 0px, transparent 60%),
-    radial-gradient(at 100% 100%, rgba(0, 210, 255, 0.06) 0px, transparent 60%);
+    radial-gradient(ellipse at 50% 0%, rgba(0, 230, 118, 0.09) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(0, 210, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 90%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
 }
 
-.section-depth {
-  background: linear-gradient(180deg, rgba(13, 19, 28, 0.5) 0%, rgba(6, 9, 13, 0.95) 100%);
+.section-glass-bg {
+  background: linear-gradient(180deg, rgba(10, 15, 23, 0.6) 0%, rgba(5, 8, 12, 0.95) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Typography Fluidity */
 .hero-fluid-title {
-  font-size: clamp(1.85rem, 5.5vw, 3.8rem);
-  line-height: 1.2;
+  font-size: clamp(1.9rem, 5.5vw, 3.8rem);
+  line-height: 1.22;
 }
 
 .hero-fluid-sub {
   font-size: clamp(0.95rem, 2.2vw, 1.15rem);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* Sticky Navbar */
 .nav-blur {
-  background: rgba(6, 9, 13, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(5, 8, 12, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
@@ -72,8 +76,8 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-text-red {
-  background: linear-gradient(135deg, #F43F5E 0%, #FFB703 100%);
+.gradient-text-alt {
+  background: linear-gradient(135deg, #F8FAFC 30%, #94A3B8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -85,7 +89,7 @@ body {
   gap: 6px;
   padding: 6px 14px;
   border-radius: 9999px;
-  background: rgba(13, 19, 28, 0.85);
+  background: rgba(15, 23, 34, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.82rem;
   font-weight: 600;
@@ -104,7 +108,7 @@ body {
 /* Smart CTA Download Button */
 .btn-hero-download {
   background: linear-gradient(135deg, #00E676 0%, #00C853 45%, #00D2FF 100%);
-  color: #06090D;
+  color: #05080C;
   font-weight: 800;
   box-shadow: 0 10px 30px -5px rgba(0, 230, 118, 0.5), 0 0 20px rgba(0, 210, 255, 0.3);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -115,10 +119,6 @@ body {
 .btn-hero-download:hover {
   transform: translateY(-2px) scale(1.01);
   box-shadow: 0 14px 40px -4px rgba(0, 230, 118, 0.7), 0 0 30px rgba(0, 210, 255, 0.5);
-}
-
-.btn-hero-download:active {
-  transform: translateY(0) scale(0.98);
 }
 
 @keyframes heroPulse {
@@ -148,16 +148,16 @@ body {
   animation: floatPhone 4.5s infinite ease-in-out;
 }
 
-/* Clean Android Device Frame (Zero artificial notches or badges) */
+/* Clean Android Device Frame */
 .phone-mockup-frame {
   position: relative;
   width: 100%;
   max-width: 290px;
   border-radius: 38px;
   padding: 8px;
-  background: linear-gradient(145deg, #1e293b, #0a0f15);
+  background: linear-gradient(145deg, #1e293b, #070b10);
   box-shadow: 0 25px 65px -15px rgba(0, 0, 0, 0.95),
-              0 0 40px rgba(0, 230, 118, 0.22),
+              0 0 40px rgba(0, 230, 118, 0.2),
               inset 0 0 2px rgba(255, 255, 255, 0.2);
   border: 2px solid #283548;
   margin: 0 auto;
@@ -177,33 +177,59 @@ body {
   display: block;
 }
 
-/* Bento Card Style */
-.bento-card {
+/* High-End Bento Cards with Rich Depth */
+.bento-card-pro {
   position: relative;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(14, 21, 31, 0.7) 0%, rgba(9, 14, 21, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-.bento-card:hover {
-  transform: translateY(-3px);
+.bento-card-pro:hover {
+  transform: translateY(-4px);
   border-color: rgba(0, 230, 118, 0.35);
-  box-shadow: 0 16px 35px -12px rgba(0, 230, 118, 0.12);
-  background: var(--bg-card-hover);
+  box-shadow: 0 20px 45px -10px rgba(0, 230, 118, 0.12),
+              0 0 20px rgba(0, 210, 255, 0.06);
 }
 
-/* Panic SOS Glowing Card */
-.panic-card-glow {
-  border: 1px solid rgba(244, 63, 94, 0.35);
-  background: linear-gradient(145deg, rgba(244, 63, 94, 0.08) 0%, rgba(13, 19, 28, 0.95) 100%);
-  transition: all 0.3s ease;
+/* Animated Soundwave Visualizer Bars */
+.sound-bars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 20px;
 }
 
-.panic-card-glow:hover {
-  border-color: rgba(244, 63, 94, 0.6);
-  box-shadow: 0 16px 35px -10px rgba(244, 63, 94, 0.2);
+.sound-bar {
+  width: 3px;
+  background: #00E676;
+  border-radius: 99px;
+  animation: barBounce 1.2s infinite ease-in-out;
+}
+
+.sound-bar:nth-child(1) { height: 6px; animation-delay: 0.1s; }
+.sound-bar:nth-child(2) { height: 16px; animation-delay: 0.3s; }
+.sound-bar:nth-child(3) { height: 10px; animation-delay: 0.2s; }
+.sound-bar:nth-child(4) { height: 18px; animation-delay: 0.4s; }
+.sound-bar:nth-child(5) { height: 8px; animation-delay: 0.15s; }
+
+@keyframes barBounce {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+/* Live Pomodoro Dial */
+.pomodoro-ring {
+  position: relative;
+  width: 90px;
+  height: 90px;
+}
+
+.pomodoro-circle-svg {
+  transform: rotate(-90deg);
 }
 
 /* Floating Telegram Floating Action Button */
@@ -262,8 +288,8 @@ body {
 
 /* Modal Backdrop */
 .modal-backdrop {
-  background: rgba(4, 7, 10, 0.85);
-  backdrop-filter: blur(12px);
+  background: rgba(3, 5, 8, 0.88);
+  backdrop-filter: blur(14px);
 }
 
 /* Mobile Adjustments */
