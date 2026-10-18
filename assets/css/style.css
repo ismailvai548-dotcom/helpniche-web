@@ -8,6 +8,7 @@
   --neon-cyan: #00D2FF;
   --neon-gold: #FFB703;
   --neon-purple: #8B5CF6;
+  --neon-rose: #F43F5E;
   --telegram-blue: #229ED9;
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
@@ -29,7 +30,7 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-main);
   overflow-x: hidden;
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -71,12 +72,18 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Feature Pill Chips (VidMate Style) */
+.gradient-text-red {
+  background: linear-gradient(135deg, #F43F5E 0%, #FFB703 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Feature Pill Chips */
 .feature-pill-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 14px;
+  padding: 6px 14px;
   border-radius: 9999px;
   background: rgba(13, 19, 28, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -133,7 +140,7 @@ body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
@@ -141,7 +148,7 @@ body {
   animation: floatPhone 4.5s infinite ease-in-out;
 }
 
-/* Clean Modern Android Device Frame (No fake iPhone notch) */
+/* Clean Android Device Frame (Zero artificial notches or badges) */
 .phone-mockup-frame {
   position: relative;
   width: 100%;
@@ -187,6 +194,18 @@ body {
   background: var(--bg-card-hover);
 }
 
+/* Panic SOS Glowing Card */
+.panic-card-glow {
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  background: linear-gradient(145deg, rgba(244, 63, 94, 0.08) 0%, rgba(13, 19, 28, 0.95) 100%);
+  transition: all 0.3s ease;
+}
+
+.panic-card-glow:hover {
+  border-color: rgba(244, 63, 94, 0.6);
+  box-shadow: 0 16px 35px -10px rgba(244, 63, 94, 0.2);
+}
+
 /* Floating Telegram Floating Action Button */
 .floating-telegram-btn {
   position: fixed;
@@ -224,7 +243,7 @@ body {
   animation: telegramPulse 3s infinite ease-in-out;
 }
 
-/* Video Placeholder Player Frame */
+/* Video Frame */
 .video-frame-container {
   position: relative;
   width: 100%;
@@ -239,6 +258,12 @@ body {
 
 .video-frame-container .aspect-video {
   aspect-ratio: 16 / 9;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  background: rgba(4, 7, 10, 0.85);
+  backdrop-filter: blur(12px);
 }
 
 /* Mobile Adjustments */

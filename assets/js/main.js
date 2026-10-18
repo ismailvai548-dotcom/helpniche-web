@@ -53,18 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const screenData = {
     home: {
       src: 'assets/images/screen-home.png',
-      title: 'সেন্ট্রাল ফোকাস ও ডিজিটাল ফায়ারওয়াল',
-      desc: 'সোশ্যাল মিডিয়া, ক্ষতিকর সাইট ও নেটওয়ার্ক ট্র্যাফিক সম্পূর্ণ নিজের নিয়ন্ত্রণে রেখে উৎপাদনশীলতা বহু গুণ বাড়িয়ে তুলুন।'
+      title: 'হোম ড্যাশবোর্ড ও ডিজিটাল ফায়ারওয়াল',
+      desc: 'লাইভ প্রটেকশন স্ট্যাটাস, দৈনিক হাদিস ও বাণী, এমার্জেন্সি প্যানিক বাটন এবং এক-ক্লিকে কুইক দরূদ ও তসবিহ গণনা।'
     },
     streak: {
       src: 'assets/images/screen-streak.png',
-      title: 'Iron Will — অবিচল ইচ্ছাশক্তি ও অগ্রগতি',
-      desc: 'লাইভ প্রগ্রেস ট্র্যাকার, ডিজিটাল ডিটক্স কাউন্টডাউন এবং ধাপে ধাপে নিজের অভ্যন্তরীণ শক্তি বৃদ্ধির এক বিজ্ঞানসম্মত প্ল্যাটফর্ম।'
+      title: 'Iron Will — অবিচল ইচ্ছাশক্তি ও স্ট্রিক ট্র্যাকার',
+      desc: 'সেকেন্ড ধরে লাইভ টাইম কাউন্টার, মাইলস্টোন সেলিব্রেশন উইন্ডো এবং ভুল থেকে শেখার জন্য বৈজ্ঞানিক রিল্যাপ্স রিসেট ফর্ম।'
     },
     routine: {
       src: 'assets/images/screen-routine.png',
-      title: 'আধ্যাত্মিক শৃঙ্খলা ও আমল রিমাইন্ডার',
-      desc: 'ওয়াক্তভিত্তিক নামাজের অ্যালার্ম, বুদ্ধিমান ভাইব্রেশন মোড এবং স্মার্ট ডিজিটাল তসবিহের সমন্বয়ে পরিচ্ছন্ন জীবনধারা।'
+      title: 'রুটিন পোর্টাল — ৫টি ডেডিকেটেড মডিউল',
+      desc: 'ডেইলি টার্গেট, ডায়নামিক টাচ তসবিহ, শর্তযুক্ত অ্যালার্ম, নামাজের অটো-ভাইব্রেট এবং স্ক্রিন আনলক গার্ড নিরাপত্তা।'
     }
   };
 
@@ -90,7 +90,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. FAQ Accordion Toggle
+  // 4. Panic SOS Interactive Simulation Modal
+  const panicTriggerBtn = document.getElementById('btn-panic-trigger');
+  const panicModal = document.getElementById('panic-sos-modal');
+  const panicCloseBtn = document.getElementById('btn-panic-close');
+  const breathingCounter = document.getElementById('breathing-phase-text');
+  let breathingInterval = null;
+
+  function runBreathingCycle() {
+    let step = 0;
+    const phases = [
+      '৪ সেকেন্ড গভীর শ্বাস নিন...',
+      '৭ সেকেন্ড শ্বাস ধরে রাখুন...',
+      '৮ সেকেন্ড ধীরে ধীরে শ্বাস ছাড়ুন...'
+    ];
+    if (breathingCounter) breathingCounter.textContent = phases[0];
+
+    breathingInterval = setInterval(() => {
+      step = (step + 1) % phases.length;
+      if (breathingCounter) breathingCounter.textContent = phases[step];
+    }, 4500);
+  }
+
+  if (panicTriggerBtn && panicModal) {
+    panicTriggerBtn.addEventListener('click', () => {
+      panicModal.classList.remove('hidden');
+      runBreathingCycle();
+    });
+  }
+
+  if (panicCloseBtn && panicModal) {
+    panicCloseBtn.addEventListener('click', () => {
+      panicModal.classList.add('hidden');
+      if (breathingInterval) clearInterval(breathingInterval);
+    });
+  }
+
+  // 5. Donation / Hadia Copy Button
+  const copyBtns = document.querySelectorAll('.btn-copy-number');
+  copyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const num = btn.getAttribute('data-number');
+      if (num) {
+        navigator.clipboard.writeText(num).then(() => {
+          const original = btn.innerHTML;
+          btn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i><span>কপি হয়েছে!</span>';
+          if (window.lucide) lucide.createIcons();
+          setTimeout(() => {
+            btn.innerHTML = original;
+            if (window.lucide) lucide.createIcons();
+          }, 2500);
+        });
+      }
+    });
+  });
+
+  // 6. FAQ Accordion Toggle
   const faqToggles = document.querySelectorAll('.faq-toggle');
   faqToggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
