@@ -72,6 +72,7 @@
 
         <!-- Center: Desktop Navigation Links -->
         <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
+          <a href="about-app.html" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-semibold hover:bg-emerald-500/20 transition-all text-xs sm:text-sm"><i data-lucide="sparkles" class="w-3.5 h-3.5"></i>About Apps</a>
           <a href="#hero" class="hover:text-emerald-400 transition-colors">ডাউনলোড</a>
           <a href="#shield-security" class="hover:text-emerald-400 transition-colors">সুরক্ষা বলয়</a>
           <a href="#focus-routine" class="hover:text-emerald-400 transition-colors">একাগ্রতা ও রুটিন</a>
@@ -98,6 +99,7 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden lg:hidden bg-[#070B10] border-b border-slate-800 px-5 py-4 space-y-3">
+      <a href="about-app.html" class="mobile-nav-link inline-flex items-center gap-2 text-emerald-400 font-semibold py-1.5 text-sm"><i data-lucide="sparkles" class="w-4 h-4"></i><span>About Apps (অ্যাপসের সম্পূর্ণ বিবরণ)</span></a>
       <a href="#hero" class="mobile-nav-link block text-slate-200 hover:text-emerald-400 font-medium py-1 text-sm">ডাউনলোড</a>
       <a href="#shield-security" class="mobile-nav-link block text-slate-200 hover:text-emerald-400 font-medium py-1 text-sm">সুরক্ষা বলয়</a>
       <a href="#focus-routine" class="mobile-nav-link block text-slate-200 hover:text-emerald-400 font-medium py-1 text-sm">একাগ্রতা ও রুটিন</a>
@@ -143,6 +145,15 @@
           <span class="inline-flex items-center gap-1.5 font-mono text-slate-300"><i data-lucide="smartphone" class="w-3.5 h-3.5 text-emerald-400"></i> মাত্র ৬.২ MB (Android)</span>
           <span class="text-slate-600">•</span>
           <span class="inline-flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> কোনো রুট লাগবে না</span>
+        </div>
+
+        <!-- About Apps Pill Link -->
+        <div class="pt-2">
+          <a href="about-app.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-700/70 hover:border-emerald-500/50 text-xs sm:text-sm font-semibold transition-all shadow-md group">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>About Apps — অ্যাপসের সকল ফিচার ও পার্ট-টু-পার্ট কার্যপ্রণালী দেখুন</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform"></i>
+          </a>
         </div>
       </div>
 
@@ -217,7 +228,39 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Module 1: Helpniche Safe Browser -->
+        <div class="bento-card-pro p-6 sm:p-7 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <i data-lucide="globe" class="w-6 h-6"></i>
+              </div>
+              <span class="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                SAFE BROWSER
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Helpniche ব্রাউজার</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              স্বয়ংক্রিয় ক্ষতিকর ও অ্যাডাল্ট সাইট ব্লকার অ্যালগরিদম যুক্ত। ব্রাউজিংয়ের সময় বিরক্তিকর পপআপ, ব্যানার ও ট্র্যাকার শতভাগ প্রতিরোধ করে।
+            </p>
+            <div class="p-3 rounded-xl bg-[#070B10] border border-slate-800 space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-300">অ্যাডাল্ট সাইট প্রতিরোধ</span>
+                <span class="text-rose-400 font-bold font-mono">১০০% লকড</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-300">পপআপ ও বিজ্ঞাপন</span>
+                <span class="text-emerald-400 font-bold font-mono">জিরো অ্যাড</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-300">নিরাপদ সার্চ মোড</span>
+                <span class="text-cyan-400 font-bold font-mono">সক্রিয়</span>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <!-- Module 1: Reels & Shorts Blocker (With Visual App Badges) -->
         <div class="bento-card-pro p-6 sm:p-8 flex flex-col justify-between">
@@ -331,6 +374,14 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Link to About Apps Section -->
+      <div class="mt-10 text-center">
+        <a href="about-app.html#part-1" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-emerald-500/50 text-xs sm:text-sm text-slate-300 hover:text-white transition-all font-semibold shadow-sm group">
+          <span>Helpniche ব্রাউজার ও অন্যান্য ফিচারের পার্ট-টু-পার্ট বিস্তারিত জানুন</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform"></i>
+        </a>
       </div>
 
     </div>
@@ -923,6 +974,7 @@
         </div>
 
         <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-400">
+          <a href="about-app.html" class="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors">About Apps</a>
           <a href="#hero" class="hover:text-emerald-400 transition-colors">ডাউনলোড</a>
           <a href="#shield-security" class="hover:text-emerald-400 transition-colors">সুরক্ষা বলয়</a>
           <a href="#focus-routine" class="hover:text-emerald-400 transition-colors">একাগ্রতা ও রুটিন</a>
